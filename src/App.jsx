@@ -12,6 +12,13 @@ const projects = [
       "Spotify integration",
       "Link management",
     ],
+    featureImages: [
+      "/images/sharkbot-custom-commands.png",
+      "/images/sharkbot-chat-moderation.png",
+      "/images/sharkbot-ad-notifications.png",
+      "/images/sharkbot-spotify-integration.png",
+      "/images/sharkbot-link-management.png",
+    ],
     tags: ["Python", "JavaScript", "API", "SQL"],
     githubUrl: "https://github.com/duytk1/sharkbot",
     videoUrl: "/videos/sharkbot-demo.mp4",
@@ -44,6 +51,7 @@ const projects = [
 
 function App() {
   const [activeVideo, setActiveVideo] = useState(null);
+  const [sharkbotFeatureIndex, setSharkbotFeatureIndex] = useState(0);
 
   useEffect(() => {
     if (!activeVideo) return undefined;
@@ -55,6 +63,19 @@ function App() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [activeVideo]);
+
+  useEffect(() => {
+    const sharkBotProject = projects.find((project) => project.title === "SharkBot");
+    if (!sharkBotProject || sharkBotProject.featureImages.length === 0) return undefined;
+
+    const interval = window.setInterval(() => {
+      setSharkbotFeatureIndex(
+        (current) => (current + 1) % sharkBotProject.featureImages.length
+      );
+    }, 3500);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -74,11 +95,41 @@ function App() {
               {project.features.length > 0 && (
                 <>
                   <p className="feature-title">Featuring:</p>
-                  <ul className="feature-list">
-                    {project.features.map((feature) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
+                  {project.title === "SharkBot" ? (
+                    <div className="feature-showcase">
+                      <div className="feature-image-frame">
+                        <img
+                          src={project.featureImages[sharkbotFeatureIndex]}
+                          alt={`${project.features[sharkbotFeatureIndex]} screenshot`}
+                          className="feature-image"
+                        />
+                      </div>
+                      <ul className="feature-list">
+                        {project.features.map((feature, index) => (
+                          <li
+                            key={feature}
+                            className={
+                              index === sharkbotFeatureIndex ? "feature-active" : ""
+                            }
+                          >
+                            <button
+                              type="button"
+                              className="feature-item-button"
+                              onClick={() => setSharkbotFeatureIndex(index)}
+                            >
+                              {feature}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <ul className="feature-list">
+                      {project.features.map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  )}
                 </>
               )}
 
