@@ -34,7 +34,7 @@ const projects = [
   },
   {
     title: "Project Three",
-    description: "Add your project summary here. Mention your role and key result.",
+    description: "",
     features: [
       
     ],
@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: "Project Four",
-    description: "Add your project summary here. Highlight metrics if possible.",
+    description: "",
     features: [
 
     ],
