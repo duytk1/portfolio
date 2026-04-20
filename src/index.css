@@ -40,7 +40,7 @@ body {
 }
 
 .site-title-flag {
-  width: clamp(1.35rem, 3.2vw, 1.85rem);
+  width: 50px;
   height: auto;
   display: block;
   object-fit: contain;
