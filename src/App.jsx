@@ -4,8 +4,7 @@ const projects = [
   {
     title: "SharkBot",
     description:
-      "SharkBot is a Twitch chatbot that uses the Twitch API to respond to messages in chat.\n"+
-      "This project solves the issues that Twitch streamers face when ",
+      "Sharkbot is a streaming assistant for Twitch and YouTube: a python based bot that handles chat, commands, events, optional AI replies and TTS in real time, and can bridge chat between platforms. It pairs with a small Flask app that serves OBS-friendly pages (chat overlay with 7TV emotes, TTS tools, links manager) and APIs backed by SQLite, plus optional Spotify “now playing” for overlays.",
     features: [
       "Custom commands",
       "Chat moderation",
@@ -26,7 +25,7 @@ const projects = [
   },
   {
     title: "MineSweeper",
-    description: "MineSweeper is project that uses Java to create a Minesweeper game.",
+    description: "This is a simple desktop Minesweeper game in Java with a Swing GUI grid, mines, left-click to reveal, right-click to flag and safe first click.",
     features: [
       "Fully functioning board",
       "Custom sound effects",
