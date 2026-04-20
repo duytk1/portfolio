@@ -24,11 +24,11 @@ const projects = [
     videoUrl: "/videos/sharkbot-demo.mp4",
   },
   {
-    title: "Project Two",
-    description: "Add your project summary here. Explain the main outcome or feature.",
+    title: "MineSweeper",
+    description: "MineSweeper is project that uses Java to create a Minesweeper game.",
     features: [],
-    tags: ["Node.js", "Express", "MongoDB"],
-    githubUrl: "#",
+    tags: ["Java"],
+    githubUrl: "https://github.com/duytk1/minesweeper",
     videoUrl: "/videos/project-two-demo.mp4",
   },
   {
