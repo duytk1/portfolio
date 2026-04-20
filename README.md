@@ -1,4 +1,4 @@
-# Portfolio — David Truong
+# Portfolio - David Truong
 
 Personal portfolio site built with **React** and **Vite**. It showcases projects with descriptions, tech tags, a feature image carousel, embedded demo videos in a modal, and links to GitHub and contact details in the header.
 
