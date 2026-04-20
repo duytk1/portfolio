@@ -1,0 +1,112 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #020617, #0f172a 40%);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 4rem 0 2rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.75rem;
+  max-width: 55ch;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.project-card {
+  background: color-mix(in oklab, var(--panel), black 10%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+
+.project-card h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  margin: 0 0 1rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.tags li {
+  font-size: 0.78rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+}
+
+.links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
