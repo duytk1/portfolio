@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 const CONTACT_EMAIL = "duytk.job@gmail.com";
 const CONTACT_EMAIL_SUBJECT = "Portfolio Inquiry";
 
+/** Resolves paths from `public/` for GitHub Pages (`vite.config.js` `base`). */
+function publicAsset(path) {
+  const trimmed = path.startsWith("/") ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${trimmed}`;
+}
+
 const projects = [
   {
     title: "SharkBot",
@@ -16,15 +22,15 @@ const projects = [
       "Text to speech",
     ],
     featureImages: [
-      "/images/sharkbot-custom-commands.png",
-      "/images/sharkbot-chat-moderation.png",
-      "/images/sharkbot-ad-notifications.png",
-      "/images/sharkbot-spotify-integration.png",
-      "/images/sharkbot-text-to-speech.png",
+      publicAsset("/images/sharkbot-custom-commands.png"),
+      publicAsset("/images/sharkbot-chat-moderation.png"),
+      publicAsset("/images/sharkbot-ad-notifications.png"),
+      publicAsset("/images/sharkbot-spotify-integration.png"),
+      publicAsset("/images/sharkbot-text-to-speech.png"),
     ],
     tags: ["Python", "JavaScript", "API", "SQL"],
     githubUrl: "https://github.com/duytk1/sharkbot",
-    videoUrl: "/videos/sharkbot-demo.mp4",
+    videoUrl: publicAsset("/videos/sharkbot-demo.mp4"),
   },
   {
     title: "MineSweeper",
@@ -36,14 +42,14 @@ const projects = [
       "Score counter",
     ],
     featureImages: [
-      "/images/minesweeper-board.png",
-      "/images/minesweeper-custom-sound-effect.png",
-      "/images/minesweeper-status-notifications.png",
-      "/images/minesweeper-score-counter.png",
+      publicAsset("/images/minesweeper-board.png"),
+      publicAsset("/images/minesweeper-custom-sound-effect.png"),
+      publicAsset("/images/minesweeper-status-notifications.png"),
+      publicAsset("/images/minesweeper-score-counter.png"),
     ],
     tags: ["Java", "swing", "GUI", "OOP"],
     githubUrl: "https://github.com/duytk1/minesweeper",
-    videoUrl: "/videos/minesweeper-demo.mp4",
+    videoUrl: publicAsset("/videos/minesweeper-demo.mp4"),
   },
   {
     title: "Project Three",
@@ -56,7 +62,7 @@ const projects = [
     ],
     tags: [],
     githubUrl: "#",
-    videoUrl: "/videos/project-three-demo.mp4",
+    videoUrl: publicAsset("/videos/project-three-demo.mp4"),
   },
   {
     title: "Project Four",
@@ -68,7 +74,7 @@ const projects = [
 
     ],
     tags: [],
-    videoUrl: "/videos/project-four-demo.mp4",
+    videoUrl: publicAsset("/videos/project-four-demo.mp4"),
   },
 ];
 
@@ -141,7 +147,7 @@ function App() {
           <h1 className="site-title">
             David Truong
             <img
-              src="/images/canadian-flag.png"
+              src={publicAsset("/images/canadian-flag.png")}
               alt="Canada"
               className="site-title-flag"
             />
