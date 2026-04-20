@@ -138,7 +138,14 @@ function App() {
     <>
       <header className="site-header">
         <div className="container">
-          <h1>David Truong</h1>
+          <h1 className="site-title">
+            David Truong
+            <img
+              src="/images/canadian-flag.png"
+              alt="Canada"
+              className="site-title-flag"
+            />
+          </h1>
           <p className="site-tagline">
             Phone: +1 (343) 463-9602
           </p>

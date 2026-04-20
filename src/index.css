@@ -28,9 +28,24 @@ body {
   padding: 4rem 0 2rem;
 }
 
-h1 {
+.site-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
   margin: 0;
   font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.site-title-flag {
+  width: clamp(1.35rem, 3.2vw, 1.85rem);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px color-mix(in oklab, white 14%, transparent);
 }
 
 .site-tagline {
