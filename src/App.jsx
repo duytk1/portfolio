@@ -28,7 +28,7 @@ const projects = [
     description: "MineSweeper is project that uses Java to create a Minesweeper game.",
     features: ["Minesweeper game"],
     featureImages: ["/images/minesweeper-board.png"],
-    tags: ["Java"],
+    tags: ["Java", "swing", "GUI", "OOP"],
     githubUrl: "https://github.com/duytk1/minesweeper",
     videoUrl: "/videos/project-two-demo.mp4",
   },
@@ -41,7 +41,7 @@ const projects = [
     featureImages: [
 
     ],
-    tags: ["Next.js", "Tailwind", "Vercel"],
+    tags: [],
     githubUrl: "#",
     videoUrl: "/videos/project-three-demo.mp4",
   },
@@ -52,10 +52,9 @@ const projects = [
 
     ],
     featureImages: [
-      
+
     ],
-    tags: ["Python", "Flask", "PostgreSQL"],
-    githubUrl: "#",
+    tags: [],
     videoUrl: "/videos/project-four-demo.mp4",
   },
 ];
