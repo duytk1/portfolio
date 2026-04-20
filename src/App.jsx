@@ -10,14 +10,14 @@ const projects = [
       "Chat moderation",
       "Ad notifications",
       "Spotify integration",
-      "Link management",
+      "Text to speech",
     ],
     featureImages: [
       "/images/sharkbot-custom-commands.png",
       "/images/sharkbot-chat-moderation.png",
       "/images/sharkbot-ad-notifications.png",
       "/images/sharkbot-spotify-integration.png",
-      "/images/sharkbot-link-management.png",
+      "/images/sharkbot-text-to-speech.png",
     ],
     tags: ["Python", "JavaScript", "API", "SQL"],
     githubUrl: "https://github.com/duytk1/sharkbot",
@@ -26,17 +26,27 @@ const projects = [
   {
     title: "MineSweeper",
     description: "MineSweeper is project that uses Java to create a Minesweeper game.",
-    features: ["Minesweeper game"],
-    featureImages: ["/images/minesweeper-board.png"],
+    features: [
+      "Fully functioning board",
+      "Custom sound effects",
+      "Status notifications",
+      "Score counter",
+    ],
+    featureImages: [
+      "/images/minesweeper-board.png",
+      "/images/minesweeper-custom-sound-effect.png",
+      "/images/minesweeper-status-notifications.png",
+      "/images/minesweeper-score-counter.png",
+    ],
     tags: ["Java", "swing", "GUI", "OOP"],
     githubUrl: "https://github.com/duytk1/minesweeper",
-    videoUrl: "/videos/project-two-demo.mp4",
+    videoUrl: "/videos/minesweeper-demo.mp4",
   },
   {
     title: "Project Three",
     description: "",
     features: [
-      
+
     ],
     featureImages: [
 
