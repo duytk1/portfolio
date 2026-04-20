@@ -137,7 +137,7 @@ function App() {
   return (
     <>
       <header className="site-header">
-        <div className="container">
+        <div className="container site-header-row">
           <h1 className="site-title">
             David Truong
             <img
@@ -146,15 +146,20 @@ function App() {
               className="site-title-flag"
             />
           </h1>
-          <p className="site-tagline">
-            Phone: +1 (343) 463-9602
-          </p>
-          <p className="site-tagline">
-            Email:{" "}
-            <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(CONTACT_EMAIL_SUBJECT,)}`} className="site-contact-link">
-              {CONTACT_EMAIL}
-            </a>
-          </p>
+          <div className="site-header-contact">
+            <p className="site-tagline">
+              Phone: +1 (343) 463-9602
+            </p>
+            <p className="site-tagline">
+              Email:{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(CONTACT_EMAIL_SUBJECT)}`}
+                className="site-contact-link"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </p>
+          </div>
         </div>
       </header>
 
