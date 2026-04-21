@@ -44,9 +44,9 @@ For a **`username.github.io`** repository, the live site is **`https://username.
 
 ## Project layout
 
-- `src/App.jsx` — Page content: projects data, header, project cards, video modal
+- `src/App.js` — Page content: projects data, header, project cards, video modal
 - `src/index.css` — Global and component styles
-- `src/main.jsx` — React entry point
+- `src/main.js` — React entry point
 - `index.html` — HTML shell
 
 ## Static assets (images & videos)
@@ -56,12 +56,12 @@ The app references files under **`/images/...`** and **`/videos/...`**. With Vit
 - `public/images/` — screenshots, flag icon, etc.
 - `public/videos/` — demo MP4s
 
-If those folders are missing, create them and add the assets your `App.jsx` paths expect.
+If those folders are missing, create them and add the assets your `App.js` paths expect.
 
 ## Customization
 
-- **Projects:** Edit the `projects` array in `src/App.jsx` (title, description, features, image paths, tags, GitHub URL, video path).
-- **Contact:** Update `CONTACT_EMAIL`, `CONTACT_EMAIL_SUBJECT`, phone, and header copy in `src/App.jsx`.
+- **Projects:** Edit the `projects` array in `src/App.js` (title, description, features, image paths, tags, GitHub URL, video path).
+- **Contact:** Update `CONTACT_EMAIL`, `CONTACT_EMAIL_SUBJECT`, phone, and header copy in `src/App.js`.
 - **Page title:** Edit `<title>` in `index.html`.
 
 ## License

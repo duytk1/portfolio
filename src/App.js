@@ -74,6 +74,7 @@ const projects = [
 
     ],
     tags: [],
+    githubUrl: "#",
     videoUrl: "/videos/project-four-demo.mp4",
   },
 ];

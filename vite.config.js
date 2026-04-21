@@ -13,5 +13,11 @@ function productionBase() {
 
 export default defineConfig(({ command }) => ({
   base: command === "serve" ? "/" : productionBase(),
-  plugins: [react()],
+  // Parse JSX in .js under src/ (import analysis + esbuild); React plugin still handles Fast Refresh.
+  esbuild: {
+    include: /src\/.*\.js$/,
+    exclude: [],
+    loader: "jsx",
+  },
+  plugins: [react({ include: "**/*.{js,jsx,ts,tsx}" })],
 }));
