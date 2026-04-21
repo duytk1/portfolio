@@ -7,7 +7,7 @@ function publicUrl(path) {
 }
 
 const CONTACT_EMAIL = "duytk.job@gmail.com";
-const CONTACT_EMAIL_SUBJECT = "Portfolio Inquiry";
+const CONTACT_EMAIL_SUBJECT = "Portfolio inquiry";
 
 const projects = [
   {
