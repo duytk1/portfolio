@@ -1,4 +1,4 @@
-# Static site: no npm/Vite. Copies HTML/CSS/JS and assets into _site/ and deploys to GitHub Pages.
+# Vite + React build; deploys `dist/` to GitHub Pages.
 # Settings → Pages → Source: GitHub Actions
 
 name: Deploy to GitHub Pages
@@ -25,18 +25,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Assemble site
-        run: |
-          mkdir -p _site/images _site/videos
-          cp index.html styles.css portfolio.js _site/
-          cp .nojekyll _site/
-          if [ -d images ]; then cp -r images/. _site/images/; fi
-          if [ -d public/images ]; then cp -r public/images/. _site/images/; fi
-          if [ -d videos ]; then cp -r videos/. _site/videos/; fi
-          if [ -d public/videos ]; then cp -r public/videos/. _site/videos/; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
       - uses: actions/deploy-pages@v4
         id: deployment

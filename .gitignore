@@ -1,5 +1,6 @@
 # Optional local tooling
 node_modules/
+dist/
 
 # OS / editor
 .DS_Store

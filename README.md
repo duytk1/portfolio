@@ -1,40 +1,45 @@
 # Portfolio - David Truong
 
-Personal portfolio: **static HTML + CSS + vanilla JavaScript** (no Vite, no React, no npm build).
+Personal portfolio: **Vite + React** with HTML-like **JSX** in `src/portfolio.jsx`. Project copy lives in `src/projects.js`.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build (matches GitHub Pages output)
+
+```bash
+npm run build
+npm run preview
+```
 
 ## Troubleshooting
 
-If the console mentions **`main.js`** or **`Unexpected token '<'`**, the page is almost always loading an **old script URL** (often a **404 HTML page** treated as JavaScript). This project no longer uses `main.js`. Do a **hard refresh** (Ctrl+Shift+R), try a **private window**, and confirm **GitHub Actions** has deployed the latest commit (Settings → Pages should use **GitHub Actions**).
-
-## Local preview
-
-Open `index.html` in a browser, or use any static file server from this folder, for example:
-
-```bash
-npx serve .
-```
-
-Then open the URL it prints (needed if `file://` asset loading is blocked).
+If the console mentions **`Unexpected token '<'`** on a `.js` file, the browser is often loading an **HTML 404** as JavaScript (wrong base URL or an old deploy). Confirm **GitHub Actions** has deployed the latest commit and try a **hard refresh** (Ctrl+Shift+R).
 
 ## Deploy (GitHub Pages)
 
 1. **One-time:** **Settings → Pages → Source:** **GitHub Actions**.
-2. **Push** to `main` or `master`. The workflow copies `index.html`, `styles.css`, `portfolio.js`, `.nojekyll`, and any **`images/`**, **`videos/`**, **`public/images/`**, **`public/videos/`** into the published site.
+2. **Push** to `main` or `master`. The workflow runs `npm ci`, `npm run build`, and publishes the **`dist/`** folder.
 
 ## Edit content
 
-- **Projects & contact:** edit `portfolio.js` (the `projects` array and `CONTACT_EMAIL` constants at the top).
+- **Projects & contact:** edit `src/projects.js` (`projects` array and `CONTACT_EMAIL` constants).
+- **Page structure (HTML-like JSX):** edit `src/portfolio.jsx`.
 - **Styles:** edit `styles.css`.
-- **Title:** edit `<title>` in `index.html`.
+- **Document shell / title:** edit `index.html`.
 
 ## Assets
 
-Put images and videos where the paths in `portfolio.js` expect them, for example:
+Put images and videos where paths in `src/projects.js` expect them, for example:
 
-- **`images/`** at the repo root (recommended), or **`public/images/`** (also copied into the live site as `images/`).
+- **`images/`** at the repo root (recommended), or **`public/images/`** (merged into the live site as `images/`).
 - **`videos/`** or **`public/videos/`** the same way.
 
-Paths in `portfolio.js` are **relative** (e.g. `images/screenshot.png`) so they work on GitHub Pages and locally.
+Paths like `images/screenshot.png` are **relative to the site root** in the built output so they work on GitHub Pages and locally.
 
 ## License
 
