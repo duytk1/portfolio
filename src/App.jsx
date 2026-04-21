@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+/** Root-relative public paths (`/images/...`) need the Vite base prefix on GitHub Pages (`/portfolio/`). */
+function publicUrl(path) {
+  const normalized = path.startsWith("/") ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${normalized}`;
+}
+
 const CONTACT_EMAIL = "duytk.job@gmail.com";
 const CONTACT_EMAIL_SUBJECT = "Portfolio Inquiry";
 
@@ -98,7 +104,7 @@ function FeatureShowcase({ features, featureImages }) {
     <div className="feature-showcase">
       <div className="feature-image-frame">
         <img
-          src={featureImages[activeFeatureIndex]}
+          src={publicUrl(featureImages[activeFeatureIndex])}
           alt={`${features[activeFeatureIndex]} screenshot`}
           className="feature-image"
         />
@@ -141,7 +147,7 @@ function App() {
           <h1 className="site-title">
             David Truong
             <img
-              src="/images/canadian-flag.png"
+              src={publicUrl("/images/canadian-flag.png")}
               alt="Canada"
               className="site-title-flag"
             />
@@ -236,7 +242,7 @@ function App() {
             </div>
 
             <video controls autoPlay className="demo-video">
-              <source src={activeVideo.url} type="video/mp4" />
+              <source src={publicUrl(activeVideo.url)} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
